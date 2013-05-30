@@ -1,0 +1,56 @@
+doctype
+html
+  head
+    title Criterion Template
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  body
+    .logo
+      a href="#"
+        = image_tag("criterion-logo.png", size: "75x75")
+    .span1
+      .well
+        p.rotate.criterion
+         | THE &nbsp;CRITERION &nbsp;COLLECTION
+    .span1
+      #well2.well2
+        = link_to "PLAY", current_film.film.url
+        br/
+        = link_to "FILMS", "#", class: "dead"
+        br/
+        = link_to "PHOTOS", "#", class: "dead"
+        br/
+        = link_to "LINKS", "#", class: "dead"
+        br/
+        = link_to "CONTACT", "#", class: "dead"
+    .stuff
+      .films.hide
+        = render 'films'
+      .photos.hide
+        = render 'photos'
+      .links.hide
+        = render 'links'
+      .contact.hide
+        = render 'contact'
+
+    = video_tag(current_film.preview.url, autoplay: true, loop: true, muted: true, preload: "auto", volume: "0", id: "video_background")
+
+coffee:
+  $(".dead").click ->
+    event.preventDefault();
+    $("a").attr "class", "dead"
+    $(".show").removeClass("show").addClass("hide")
+
+    $(this).attr "class", "alive"
+    section = $(this).text().toLowerCase()
+    $("."+section).attr "class", section+" show"
+
+  $(".logo").click ->
+    event.preventDefault();
+    $("a").attr "class", "dead"
+    $(".show").removeClass("show").addClass("hide")
+
+  $("#add-film").click ->
+    event.preventDefault();
+    $(".form.hide").removeClass("hide").addClass("show")
