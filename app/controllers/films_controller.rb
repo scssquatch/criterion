@@ -12,16 +12,15 @@ class FilmsController < ApplicationController
 
   def new
     @film = Film.new
-    render "new.js.erb"
   end
 
   def create
     @film = Film.new(film_params)
     @film.active = false
     if @film.save
-      redirect_to root_url, alert: "Video Uploaded"
+      redirect_to root_url
     else
-      redirect_to :back, alert: 'Video Upload Failed'
+      redirect_to :back
     end
   end
 
