@@ -1,13 +1,10 @@
 class FilmsController < ApplicationController
 
   def activate
-    current_film.update_attributes(active: false)
-
     @film = Film.find(params[:id])
-    @film.update_attributes(active: true)
-    @film.save!
-
-    redirect_to root_url
+    respond_to do |format|
+      format.js
+    end
   end
 
   def new

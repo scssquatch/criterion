@@ -7,7 +7,7 @@
      | THE &nbsp;CRITERION &nbsp;COLLECTION
 .span1
   #well2.well2
-    = link_to "PLAY", current_film.film.url
+    = link_to "PLAY", @films.first.film.url, id: "play"
     br/
     = link_to "FILMS", "#", class: "dead"
     br/
@@ -26,12 +26,12 @@
   .contact.hide
     = render 'contact'
 
-= video_tag(current_film.preview.url, autoplay: true, loop: true, muted: true, preload: "auto", volume: "0", id: "video_background")
+= video_tag(@films.first.preview.url, autoplay: true, loop: true, muted: true, preload: "auto", volume: "0", id: "video_background")
 
 coffee:
   $(".dead").click ->
     event.preventDefault();
-    $("a").attr "class", "dead"
+    $(".alive").attr "class", "dead"
     $(".show").removeClass("show").addClass("hide")
 
     $(this).attr "class", "alive"
@@ -40,7 +40,12 @@ coffee:
 
   $(".logo").click ->
     event.preventDefault();
-    $("a").attr "class", "dead"
+    $(".alive").attr "class", "dead"
+    $(".show").removeClass("show").addClass("hide")
+
+  $(".exit").click ->
+    event.preventDefault();
+    $(".alive").attr "class", "dead"
     $(".show").removeClass("show").addClass("hide")
 
   $("#add-film").click ->
