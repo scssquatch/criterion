@@ -8,9 +8,10 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
+
+
  */
+
 @font-face {
   font-family: "Gothamy";
   src: url('Gotham-Medium.otf');
@@ -160,3 +161,5 @@ img {
 .hide {
   display: none;
 }
+body {
+  background-color: white; }
