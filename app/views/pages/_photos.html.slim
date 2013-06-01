@@ -1,12 +1,9 @@
 .content
   p PHOTOS
-  img.photo src="http://www.placecage.com/c/300/200"
-  img.photo src="http://www.placecage.com/c/200/300"
-  img.photo src="http://www.placecage.com/c/300/500"
-  img.photo src="http://www.placecage.com/c/600/800"
-  img.photo src="http://www.placecage.com/c/400/100"
-  img.photo src="http://www.placecage.com/c/600/200"
-  img.photo src="http://www.placecage.com/c/100/300"
-  img.photo src="http://www.placecage.com/c/200/200"
-  img.photo src="http://www.placecage.com/c/700/400"
+  - @photos.each do |photo|
+    = image_tag photo.photo.url, class: "preview"
+  br/
+  = link_to "UPLOAD PHOTOS", "#", id: "add-photo"
+  .form.hide#new-photo
+    = render 'photos/form'
   a.exit href="#" x

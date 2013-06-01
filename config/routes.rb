@@ -1,4 +1,6 @@
 Criterion::Application.routes.draw do
+  resources :photos
+
   resources :films
   root 'pages#index'
 

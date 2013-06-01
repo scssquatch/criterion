@@ -160,3 +160,9 @@ img {
 .hide {
   display: none;
 }
+.preview {
+  max-height: 300px;
+  max-width: 300px;
+  display: inline;
+  margin-bottom: 30px;
+}

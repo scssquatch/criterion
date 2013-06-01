@@ -50,4 +50,8 @@ coffee:
 
   $("#add-film").click ->
     event.preventDefault();
-    $(".form.hide").removeClass("hide").addClass("show")
+    $("#new-film").removeClass("hide").addClass("show")
+
+  $("#add-photo").click ->
+    event.preventDefault();
+    $("#new-photo").removeClass("hide").addClass("show")

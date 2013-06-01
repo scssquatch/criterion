@@ -1,0 +1,18 @@
+= form_for @photo do |f|
+  - if @photo.errors.any?
+    .error_messages
+      h3 Form is invalid
+      ul
+        - @photo.errors.full_messages.each do |message|
+          li= message
+  .control-group
+    = f.label :title, class: "control-label"
+    .controls
+      = f.text_field :title
+  .control-group
+    = f.label :photo, class: "control-label"
+    .controls
+      = f.file_field :photo
+  .control-group
+    .controls
+      = f.submit "Save", class: "btn"
