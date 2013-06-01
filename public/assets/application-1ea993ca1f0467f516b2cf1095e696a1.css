@@ -1,0 +1,171 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+@font-face {
+  font-family: "Gothamy";
+  src: url('Gotham-Medium.otf');
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+}
+
+@font-face {
+  font-family: "Gothamy";
+  src: url('Gotham-Bold.otf');
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+}
+
+#video_background {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  z-index: 1;
+}
+
+body {
+  background-color: black;
+  margin: 0px;
+}
+
+.well, .well2 {
+  position: fixed;
+  border-radius: 1px;
+  margin-left: -20px;
+  background-color: #FFF;
+  font-family: Gothamy, Gotham-Medium, Arial, sans-serif;
+  opacity: 0.7;
+  font-size: 15px;
+  padding: 15px 15px 15px 15px;
+  width: 60px;
+  height: 250px;
+}
+
+.well {
+  opacity: 0.9;
+}
+
+.well2 {
+  text-align: left;
+  line-height: 20px;
+  width: 110px;
+}
+
+.rotate {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+
+  /* Should be unset in IE9+ I think. */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-3); 
+}
+
+.criterion {
+  position: fixed;
+  width: 255px;
+  margin-top: 120px;
+  margin-left: -70px;
+}
+
+.logo {
+  z-index: 1000;
+  position: fixed;
+  top: 40px;
+  left: 50px;
+  padding: 0px;
+  opacity: 0.7;
+}
+.exit {
+  z-index: 1000;
+  top: 8px;
+  right: 10px;
+  padding: 3px;
+  position: absolute;
+}
+
+.span1 {
+  z-index: 1000;
+  position: fixed;
+  top: 240px;
+  left: 0px;
+  margin-left: 10px;
+}
+
+.span1 + .span1 {
+  left: 95px;
+}
+
+a {
+  color: #333;
+  font-family: Gothamy, Gotham-Medium, Arial, sans-serif;
+  text-decoration: none;
+}
+
+a:hover {
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+a:visited {
+  font-family: Gothamy, Gotham-Medium, Arial, sans-serif;
+}
+
+.content {
+  position: absolute;
+  z-index: 1000;
+  padding: 20px 15px 50px 15px;
+  margin-top: 50px;
+  margin-left: 300px;
+  min-height: 75%;
+  text-align: center;
+  height: auto;
+  width: 800px;
+  background-color: rgba(255,255,255,0.85);
+  font-family: Gothamy, Gotham-Medium, Arial, sans-serif;
+}
+
+.dead {
+  font-family: Gothamy, Gotham-Medium, Arial, sans-serif;
+}
+
+.alive {
+  font-weight: bold;
+}
+
+img {
+  padding: 20px;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.preview {
+  max-height: 300px;
+  max-width: 300px;
+  display: inline;
+  margin-bottom: 30px;
+}
+body {
+  background-color: white; }
