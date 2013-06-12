@@ -22,5 +22,6 @@ module Criterion
 
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
     config.assets.paths << "#{Rails.root}/app/assets/videos"
+    config.assets.precompile += %w(Gotham-Medium.otf Gotham-Bold.otf)
   end
 end
