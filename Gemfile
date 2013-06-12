@@ -4,6 +4,10 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'
 
+# try to fix herokus asset shit
+gem 'rails_log_stdout', github: 'heroku/rails_log_stdout'
+gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 
