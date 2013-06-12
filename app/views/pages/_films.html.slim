@@ -1,10 +1,8 @@
 .content
-  p FILMS
-  - @films.each do |film|
-    = link_to film.title, films_activate_path(film.id), remote: true
-    br/
-    br/
-  br/
+  h4 FILMS
+  ul
+    - @films.each do |film|
+      li = link_to film.title, films_activate_path(film.id), remote: true
   = link_to "ADD ANOTHER FILM", "#", id: "add-film"
   .form.hide#new-film
     = render 'films/form'

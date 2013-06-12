@@ -1,8 +1,8 @@
 .content
-  p PHOTOS
+  h4 PHOTOS
   - @photos.each do |photo|
     = image_tag photo.photo.url, class: "preview"
-  br/
+  br
   = link_to "UPLOAD PHOTOS", "#", id: "add-photo"
   .form.hide#new-photo
     = render 'photos/form'
