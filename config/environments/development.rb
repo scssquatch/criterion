@@ -26,6 +26,8 @@ Criterion::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+  config.assets.precompile += %w( .svg .eot .woff .ttf )
 
   aws = YAML.load_file('config/aws.yml')["development"]
   config.paperclip_defaults = {}
