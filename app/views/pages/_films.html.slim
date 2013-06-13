@@ -4,6 +4,6 @@
     - @films.each do |film|
       li = link_to film.title, films_activate_path(film.id), remote: true
   = link_to "ADD ANOTHER FILM", "#", id: "add-film"
-  .form.hide#new-film
+  .film_form.hide
     = render 'films/form'
   a.exit href="#" x

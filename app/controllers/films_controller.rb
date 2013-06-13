@@ -16,9 +16,7 @@ class FilmsController < ApplicationController
     @film = Film.new(film_params)
     @film.active = false
     if @film.save
-      respond_to do |format|
-        format.js
-      end
+      redirect_to root_url
     else
       respond_to do |format|
         format.js { render "failed" }

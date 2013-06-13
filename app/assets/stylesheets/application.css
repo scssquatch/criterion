@@ -118,7 +118,7 @@ ul {
 .span1 {
   z-index: 1000;
   position: fixed;
-  top: 240px;
+  top: 35%;
   left: 0px;
   margin-left: 10px;
 }
