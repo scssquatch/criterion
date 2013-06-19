@@ -2,8 +2,13 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
-    @photo.save
-    redirect_to root_url
+    if @photo.save
+      respond_to do |format|
+        format.js
+      end
+    else
+      head 400
+    end
   end
 
 

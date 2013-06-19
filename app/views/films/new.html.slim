@@ -1,2 +1,22 @@
-h1 New Film!
-= render 'form'
+= form_for @film  do |f|
+  .error_messages
+    - if @film.errors.any?
+      h3 Form is invalid
+      ul.films
+        - @film.errors.full_messages.each do |message|
+          li= message
+  .control-group
+    = f.label :title, class: "control-label"
+    .controls
+      = f.text_field :title
+  .control-group
+    = f.label :film, class: "control-label"
+    .controls
+      = f.file_field :film
+  .control-group
+    = f.label :preview, class: "control-label"
+    .controls
+      = f.file_field :preview
+  .control-group
+    .controls
+      = f.submit "Save", id: "save_film"

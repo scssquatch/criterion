@@ -1,6 +1,6 @@
-= form_for @film, remote: true do |f|
-  - if @film.errors.any?
-    .error_messages
+= form_for @film  do |f|
+  .error_messages
+    - if @film.errors.any?
       h3 Form is invalid
       ul.films
         - @film.errors.full_messages.each do |message|
@@ -19,4 +19,15 @@
       = f.file_field :preview
   .control-group
     .controls
-      = f.submit "Save"
+      = f.submit "Save", id: "save_film"
+
+coffee:
+  $("#save_film").click (e) ->
+    e.preventDefault()
+    formElement = document.getElementById "new_film"
+    oReq = new XMLHttpRequest()
+    oReq.open("Post", "films")
+    oReq.setRequestHeader('Accept', 'text/javascript')
+    oReq.send(new FormData(formElement))
+    oReq.onload = (e) ->
+      eval(this.responseText)

@@ -15,4 +15,14 @@
       = f.file_field :photo
   .control-group
     .controls
-      = f.submit "Save", class: "btn"
+      = f.submit "Save", id: "save_photo"
+coffee:
+  $("#save_photo").click (e) ->
+    e.preventDefault()
+    formElement = document.getElementById "new_photo"
+    oReq = new XMLHttpRequest()
+    oReq.open("Post", "photos")
+    oReq.setRequestHeader('Accept', 'text/javascript')
+    oReq.send(new FormData(formElement))
+    oReq.onload = (e) ->
+      eval(this.responseText)

@@ -1,6 +1,6 @@
 .content
   h4 FILMS
-  ul
+  ul#film_list
     - @films.each do |film|
       li = link_to film.title, films_activate_path(film.id), remote: true
   = link_to "ADD ANOTHER FILM", "#", id: "add-film"

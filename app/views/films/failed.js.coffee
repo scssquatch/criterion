@@ -1,1 +1,1 @@
-$('.new_film').prepend("Try again!")
+$('#new_film').prepend("Try again!")
