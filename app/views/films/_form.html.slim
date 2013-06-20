@@ -20,20 +20,23 @@
   .control-group
     .controls
       = f.submit "Save", id: "save_film"
+.percent_done
+
 
 coffee:
   $("#save_film").click (e) ->
     e.preventDefault()
     formElement = document.getElementById "new_film"
     oReq = new XMLHttpRequest()
+    oReq.addEventListener("progress", updateProgress, false);
     oReq.open("Post", "films")
     oReq.setRequestHeader('Accept', 'text/javascript')
     oReq.send(new FormData(formElement))
-    oReq.addEventListener("progress", updateProgress, false);
     oReq.onload = (e) ->
       eval(this.responseText)
 
   updateProgress = (e) ->
     if e.lengthComputable
       percentComplete = e.loaded / e.total;
-      $("#new_film").append percentComplete
+      $(".percent_done").empty()
+      $(".percent_done").append percentComplete
