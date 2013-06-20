@@ -29,5 +29,11 @@ coffee:
     oReq.open("Post", "films")
     oReq.setRequestHeader('Accept', 'text/javascript')
     oReq.send(new FormData(formElement))
+    oReq.addEventListener("progress", updateProgress, false);
     oReq.onload = (e) ->
       eval(this.responseText)
+
+  updateProgress = (e) ->
+    if e.lengthComputable
+      percentComplete = e.loaded / e.total;
+      $("#new_film").append percentComplete
